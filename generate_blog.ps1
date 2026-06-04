@@ -148,12 +148,12 @@ function Get-HubHtml {
                             <span class="text-xs text-text-muted">##READ_TIME##</span>
                         </div>
                         <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
-                            <a href="##SLUG##.html">##TITLE##</a>
+                            <a href="/blog/##SLUG##.html">##TITLE##</a>
                         </h2>
                         <p class="text-sm text-text-muted mb-6 flex-grow">##EXCERPT##</p>
                         <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
                             <span class="text-xs text-text-muted">Updated: ##DATE##</span>
-                            <a href="##SLUG##.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                            <a href="/blog/##SLUG##.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
