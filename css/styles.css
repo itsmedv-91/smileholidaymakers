@@ -1658,3 +1658,253 @@ img {
         text-align: center;
     }
 }
+
+/* ==========================================
+   FLOATING WHATSAPP WIDGET STYLES
+   ========================================== */
+.whatsapp-widget-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.whatsapp-floating-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.whatsapp-floating-btn:hover {
+    transform: scale(1.1);
+    background-color: #20BA5A;
+}
+
+.whatsapp-floating-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--white);
+}
+
+.whatsapp-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #25D366;
+    animation: waPulse 2s infinite;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+@keyframes waPulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.85;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Form popup card */
+.whatsapp-popup-card {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 330px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: bottom right;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-popup-card.active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.wa-popup-header {
+    background-color: #075E54;
+    color: var(--white);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wa-agent-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wa-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.wa-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white);
+    object-fit: contain;
+    padding: 2px;
+}
+
+.wa-status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #4AD962;
+    border: 2px solid #075E54;
+    border-radius: 50%;
+}
+
+.wa-agent-info h5 {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.wa-agent-info p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.wa-popup-close {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+}
+
+.wa-popup-close:hover {
+    opacity: 1;
+}
+
+.wa-popup-body {
+    padding: 20px;
+}
+
+.wa-welcome-msg {
+    font-size: 0.825rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 18px;
+    background-color: #F0F4F8;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #25D366;
+}
+
+.wa-form-group {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.wa-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.wa-input, .wa-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    transition: var(--transition-smooth);
+    background-color: var(--bg-light);
+}
+
+.wa-input:focus, .wa-select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.15);
+    background-color: var(--white);
+}
+
+.wa-submit-btn {
+    width: 100%;
+    background-color: #25D366;
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+    margin-top: 8px;
+}
+
+.wa-submit-btn:hover {
+    background-color: #20BA5A;
+}
+
+.wa-submit-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--white);
+}
+
+.wa-error-msg {
+    color: #E53E3E;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .whatsapp-widget-container {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-popup-card {
+        bottom: 70px;
+        right: 0;
+        width: 300px;
+    }
+}

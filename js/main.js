@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const destParam = urlParams.get('destination');
     const destinationSelect = document.getElementById('interest');
     if (destParam && destinationSelect) {
+        const target = destParam.toLowerCase();
         for (let option of destinationSelect.options) {
-            if (option.value.toLowerCase() === destParam.toLowerCase()) {
+            const val = option.value.toLowerCase();
+            if (val === target || val.startsWith(target)) {
                 option.selected = true;
                 break;
             }
@@ -131,102 +133,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. PACKAGE MODAL & DETAILED DATA
     // ==========================================
     const packagesData = {
-        'honeymoon-manali': {
-            title: 'Manali Honeymoon Special',
-            duration: '4 Nights / 5 Days',
-            price: '₹14,999 / Person',
-            image: 'images/hero-manali.jpg',
-            inclusions: ['Luxury Honeymoon Suite with Mountain Views', 'Daily Buffet Breakfast & Dinner', 'Private Cab for Rohtang & Solang Valley excursions', 'Candlelight Dinner with Complimentary Honeymoon Cake & Wine', 'Kesar Milk & Floral Bed Decoration', 'All local driver allowances, toll, & parking fees'],
-            itinerary: [
-                'Day 1: Delhi/Chandigarh to Manali drive. Welcome drink & check-in to your honeymoon suite. Candlelight dinner.',
-                'Day 2: Full day excursion to Solang Valley for stunning views. Enjoy optional paragliding and zorbing.',
-                'Day 3: Scenic trip to Snow Point / Rohtang Pass. Evening stroll on Manali Mall Road.',
-                'Day 4: Guided local sightseeing visiting Hadimba Temple, Vashisht Hot Springs, and Club House.',
-                'Day 5: Check-out and scenic departure drop back to Delhi or Chandigarh.'
-            ]
-        },
-        'adventure-manali': {
-            title: 'Manali Adventure & Trekking',
-            duration: '5 Nights / 6 Days',
-            price: '₹12,500 / Person',
-            image: 'images/hero-manali.jpg',
-            inclusions: ['Campsite & Alpine Tent stay with campfires', 'All adventure equipment & professional trekking guides', 'All meals during trekking (Freshly prepared high-energy food)', 'Paragliding in Solang Valley & Beas River rafting experience', 'Jeep transfer support', 'First-aid kit & emergency oxygen backup'],
-            itinerary: [
-                'Day 1: Arrival in Manali. Check-in to base camp. Gear check and briefing session.',
-                'Day 2: Thrilling river rafting in Beas River. Afternoon trek initialization up to Jogini Waterfalls.',
-                'Day 3: Full day Solang Valley adventure: Paragliding flight and trek to Anjani Mahadev.',
-                'Day 4: Moderate trek to Lamadugh Meadows for stunning panoramic views of Pir Panjal range.',
-                'Day 5: Campfire night with local music, star gazing, and group outdoor dinner.',
-                'Day 6: Final check-out and drop off to the Volvo bus stand.'
-            ]
-        },
-        'family-manali': {
-            title: 'Manali Family Holiday',
-            duration: '4 Nights / 5 Days',
-            price: '₹11,999 / Person',
-            image: 'images/hero-manali.jpg',
-            inclusions: ['Interconnected Family Rooms at 3-Star Deluxe Hotel', 'Breakfast and Dinner buffet catering to all ages', 'Comfortable Toyota Innova for all family excursions', 'All entry tickets to parks, museum, and snow point passes', 'Local shopping guide assistance', 'Child safety seats available on request'],
-            itinerary: [
-                'Day 1: Pick up from Chandigarh airport/station. Drive to Manali. Check-in and evening rest.',
-                'Day 2: Visit Hadimba temple, Manu temple, and Tibetan Monastery. Handloom shopping on Mall Road.',
-                'Day 3: Exciting family excursion to Solang Valley. Ropeway ride and snow activities.',
-                'Day 4: Excursion to Rohtang Pass (subject to permit). Evening cultural dance showcase at the hotel.',
-                'Day 5: Depart Manali via Kullu Shawl factories. Drop to Chandigarh.'
-            ]
-        },
-        'weekend-shimla': {
-            title: 'Classic Shimla Weekend',
+        'special-shimla': {
+            title: 'Special Shimla Tour Package',
             duration: '2 Nights / 3 Days',
-            price: '₹7,999 / Person',
-            image: 'images/hero-shimla.jpg',
-            inclusions: ['Premium Ridge-view Room Stay', 'Daily Breakfast & Dinner', 'Private Cab for Kufri excursion & Local Sightseeing', 'Guided heritage walk along the historic Mall Road', 'Complimentary heater in room', 'All tolls, driver charges & taxes included'],
+            price: 'Starting from ₹5,999 / Person',
+            image: 'images/hero-shimla.png',
+            inclusions: ['Luxury Hotel Stay (2 Nights)', 'Luxury AC Volvo tickets (Delhi to Shimla both ways)', 'Free Pick-up & Drop within Shimla', '2 Breakfasts & 2 Dinners in hotel', 'Complete Local Shimla Sightseeing', 'Tolls, Parking & Driver Allowance included'],
             itinerary: [
-                'Day 1: Arrive in Shimla. Evening at leisure. Walk along Mall Road, Ridge, and visit Scandal Point.',
-                'Day 2: Day excursion to Kufri - visit Himalayan Nature Park, enjoy yak rides and adventure park activities.',
-                'Day 3: Morning trek to Jakhoo Hill Temple (Hanuman Statue). Check-out and departure drop.'
+                'Day 1: Departure from Delhi & Arrival. Board Luxury AC Volvo from Delhi for an overnight journey. Arrive in Shimla, check-in, freshen up, and relax. Meals: Dinner included.',
+                'Day 2: Local Shimla & Kufri Sightseeing. Breakfast at hotel. Morning sightseeing: The Ridge, Mall Road, Lakkar Bazaar, Christ Church, Sankat Mochan Hanuman Ji, Jakhu Temple, and Adventure Park. Afternoon excursion to Kufri for mountain views, optional horse riding, and nature walks. Meals: Breakfast & Dinner included.',
+                'Day 3: Mashobra, Tattapani, Naldehra & Departure. Breakfast at hotel, check-out, and store luggage. Explore Mashobra (apple orchards & wildlife sanctuary), Tattapani (hot springs on Sutlej River), and Naldehra (golf course & meadows). Evening departure via Luxury AC Volvo back to Delhi. Meals: Breakfast included.'
             ]
         },
-        'heritage-shimla': {
-            title: 'Heritage & Toy Train Tour',
-            duration: '3 Nights / 4 Days',
-            price: '₹10,500 / Person',
-            image: 'images/hero-shimla.jpg',
-            inclusions: ['Kalka to Shimla heritage Toy Train ticket (VistaDome if available)', 'Stay at a colonial-era Heritage Hotel', 'Private cab for historical landmarks tours', 'Guided tours of Viceregal Lodge (Indian Institute of Advanced Study)', 'Passes to Shimla State Museum', 'Daily classic multi-cuisine breakfasts & dinners'],
+        'special-combined': {
+            title: 'Special Shimla & Manali Tour Package',
+            duration: '5 Nights / 6 Days',
+            price: 'Starting from ₹14,999 / Person',
+            image: 'images/hero-combined.png',
+            inclusions: ['3-Star Luxury Hotel (2 Nights Shimla / 3 Nights Manali)', 'Luxury AC Volvo transport (Delhi-Shimla & Manali-Delhi)', 'Private Cab Transfer & Sightseeing for all days', '5 Breakfasts & 5 Dinners', 'Welcome drinks (non-alcoholic) in Manali hotel', 'Tolls, Parking & Driver Allowance included', 'Note: Adventure activities at own cost'],
             itinerary: [
-                'Day 1: Board the scenic Toy Train from Kalka. Arrive in Shimla, transfer to colonial hotel.',
-                'Day 2: Historical tour: Viceregal Lodge, Annandale Army Heritage Museum, State Museum.',
-                'Day 3: Trek up to Jakhoo Temple and explore the wooden handicraft shops at Lakkar Bazaar.',
-                'Day 4: Check-out and private cab transfer back to Kalka/Chandigarh station.'
+                'Day 1: Delhi to Shimla. Board Luxury AC Volvo from Delhi for an overnight journey. Arrive in Shimla, complimentary hotel transfer, check-in, and relax. Meals: Dinner included.',
+                'Day 2: Local Shimla Sightseeing. Breakfast at hotel. Take a private cab tour of The Ridge, Mall Road, Lakkar Bazaar, Christ Church, Sankat Mochan Hanuman Ji, and Jakhu Temple. Free evening to stroll Mall Road. Meals: Breakfast & Dinner included.',
+                'Day 3: Kufri + Transfer to Manali. Breakfast at Shimla hotel. Explore Kufri scenery, optional horse riding, and nature walks. Depart by cab to Manali (approx. 7–8 hours via Kullu Valley). Check-in at Manali hotel with welcome drinks. Meals: Breakfast & Dinner included.',
+                'Day 4: Local Manali Sightseeing. Breakfast at hotel. Visit Hidimba Devi Temple, Club House, Vashisht Temple (hot water spring), Jugni Waterfall Trek, Tibetan Monastery, and Van Vihar. Leisure evening on Manali Mall Road. Meals: Breakfast & Dinner included.',
+                'Day 5: Solang Valley Adventure Day. Breakfast at hotel. Drive 15 km to Solang Valley for activities like paragliding, cable car, zorbing, snow scooter, skiing, horse riding, or the optional Anjani Mahadev Trek. Meals: Breakfast & Dinner included.',
+                'Day 6: Kullu / Manikaran & Departure. Breakfast at hotel, then check-out. Tour Kullu (Naggar Castle, Roerich Art Gallery, Raison Museum, Waterfall, Kais Gompa, Vaishno Mata Temple, Shawl Factory, and Rafting/Paragliding point) and visit Manikaran Sahib Gurudwara. Board evening Luxury AC Volvo from Manali back to Delhi. Meals: Breakfast included.'
             ]
         },
-        'luxury-shimla': {
-            title: 'Luxury Shimla Retreat',
+        'special-manali-4n': {
+            title: 'Special Manali Tour Package (4N/5D)',
             duration: '4 Nights / 5 Days',
-            price: '₹22,999 / Person',
-            image: 'images/hero-shimla.jpg',
-            inclusions: ['5-Star Luxury Resort Stay (e.g., Wildflower Hall style)', 'Welcome champagne and organic fruit platter', 'All meals included (A-la-carte menu options)', 'Private luxury SUV (Innova Crysta) for all transfers', '60-Minute spa & wellness therapy package per adult', 'Private bonfire night with customized barbecue'],
+            price: 'Starting from ₹9,999 / Person',
+            image: 'images/hero-manali.png',
+            inclusions: ['3-Star Hotel (2 Nights Stay in Manali, 2 Nights in Volvo)', 'Luxury AC Volvo tickets (Delhi to Manali both ways)', 'Private Car for local sightseeing and excursions', '2 Breakfasts & 2 Dinners', 'Welcome drinks (non-alcoholic) on arrival', 'Pick-up/Drop at Manali Volvo Bus Stand', 'Tolls, Parking & Driver Allowance included', 'Note: Adventure activities at own cost'],
             itinerary: [
-                'Day 1: VIP transfer to luxury resort. Check-in, welcome drinks, and evening private wellness session.',
-                'Day 2: Private chauffeured tour of Naldehra Golf course and scenic Mashobra pine forests.',
-                'Day 3: Premium Kufri valley excursion with private horseback safari. Gourmet picnic lunch.',
-                'Day 4: Leisure day at the resort. Enjoy the heated indoor-outdoor pool, spa treatments, and private bonfire.',
-                'Day 5: Luxurious breakfast, private SUV transfer drop-off to Chandigarh airport.'
+                'Day 1: Departure. Evening departure from Delhi via Luxury AC Volvo. Overnight journey into the Himalayas.',
+                'Day 2: Arrive Manali + Local Sightseeing. Arrive, hotel pick-up, and check-in with welcome drinks. Sightseeing covers Hidimba Devi Temple, Club House, Tibetan Monastery, and Van Vihar National Park. Evening leisure on Mall Road. Meals: Breakfast & Dinner included.',
+                'Day 3: Solang Valley Adventure Day. Breakfast at hotel. Day trip to Solang Valley (lush green fields in summer; snow sports/skiing in winter). Available activities include paragliding, cable car, zorbing, snow scooter, horse riding, and Anjani Mahadev Trek. Meals: Breakfast & Dinner included.',
+                'Day 4: Kullu / Manikaran Sightseeing & Departure. Breakfast at hotel, check-out. Private car tour of Kullu highlights (Naggar Castle, Roerich Art Gallery, Raison Museum, Waterfall, Kais Gompa, Vaishno Mata Temple, Shawl Factory Outlet, Rafting & Paragliding Point) and Manikaran Sahib Ji Gurudwara. Evening drop to Volvo stand for return journey. Meals: Breakfast included.',
+                'Day 5: Arrive Delhi. Early morning arrival in Delhi.'
             ]
         },
-        'combined-loop': {
-            title: 'The Ultimate Himachal Loop (Shimla & Manali)',
-            duration: '6 Nights / 7 Days',
-            price: '₹19,999 / Person',
-            image: 'images/hero-combined.jpg',
-            inclusions: ['3 Nights stay in Shimla & 3 Nights stay in Manali', 'Premium hotels with breakfast & dinner daily', 'All intercity transfers & local sightseeing in private AC Cab', 'Toy train experience pass & Kullu Valley adventure pass', 'All permits for Rohtang Pass / Solang Valley included', '24/7 Dedicated Himachali tour manager support'],
+        'special-manali-5n': {
+            title: 'Special Manali Tour Package (5N/6D)',
+            duration: '5 Nights / 6 Days',
+            price: 'Starting from ₹11,999 / Person',
+            image: 'images/hero-manali.png',
+            inclusions: ['3-Star Hotel (3 Nights Stay in Manali, 2 Nights in Volvo)', 'Luxury AC Volvo tickets (Delhi to Manali both ways)', 'Private Car for sightseeing and transfers', '3 Breakfasts & 3 Dinners', 'Welcome drinks (non-alcoholic) on arrival', 'Pick-up/Drop at Manali Volvo Bus Stand', 'Tolls, Parking & Driver Allowance included', 'Note: Adventure activities at own cost'],
             itinerary: [
-                'Day 1: Chandigarh pickup, scenic drive to Shimla. Evening Mall Road walk.',
-                'Day 2: Excursion to Kufri & Green Valley. Visit Jakhoo temple.',
-                'Day 3: Drive from Shimla to Manali. En-route Kullu Valley sightseeing and river rafting.',
-                'Day 4: Manali local tour: Hadimba Temple, Vashisht hot springs, Clubhouse.',
-                'Day 5: Solang Valley & Rohtang Pass snow point excursion.',
-                'Day 6: Excursion to Manikaran hot springs and Parvati Valley borders.',
-                'Day 7: Drive from Manali back to Chandigarh for departure drop.'
+                'Day 1: Departure. Evening departure from Delhi via Luxury AC Volvo; overnight travel.',
+                'Day 2: Arrive Manali + Local Sightseeing. Arrive, pick-up, check-in with welcome drinks. Sightseeing includes Hidimba Devi Temple, Jugni Waterfall Trek, Tibetan Monastery, and Van Vihar National Park. Evening spent on Mall Road. Meals: Breakfast & Dinner included.',
+                'Day 3: Solang Valley Adventure Day. Breakfast at hotel. Excursion to Solang Valley for seasonal mountain/snow activities, paragliding, zorbing, skiing, cable car, or Anjani Mahadev Trek. Meals: Breakfast & Dinner included.',
+                'Day 4: Kullu / Manikaran Sightseeing. Breakfast at hotel. Full-day private car excursion to Kullu (Naggar Castle, Roerich Art Gallery, Raison Museum, Waterfall, Kais Gompa, Vaishno Mata Temple, Shawl Factory Outlet, Rafting & Paragliding Point) and the sacred hot springs of Manikaran Sahib Ji Gurudwara. Return to hotel. Meals: Breakfast & Dinner included.',
+                'Day 5: Leisure / Optional Activities & Departure. Breakfast at hotel followed by check-out. Enjoy a free morning to relax by the Beas River or shop for Himachali shawls, dry fruits, and souvenirs on Mall Road. Evening drop to the Volvo stand for an overnight trip to Delhi. Meals: Breakfast included.',
+                'Day 6: Arrive Delhi. Early morning arrival in Delhi.'
             ]
         }
     };
@@ -414,17 +374,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 console.log('Lead Captured Successfully:', dataObject);
                 
+                // Construct encoded WhatsApp message content
+                const mainFormWaText = `🏔️ *SMILE HOLIDAY MAKERS* 🏔️
+*Stress Less, Travel More.*
+-----------------------------------
+*Main Form Enquiry Details:*
+*Name:* ${dataObject.fullname}
+*Email:* ${dataObject.email}
+*Phone:* ${dataObject.phone}
+*Destination:* ${dataObject.interest}
+*Travel Date:* ${dataObject.travelDate}
+*Duration:* ${dataObject.duration}
+*Adults:* ${dataObject.adults}
+*Children:* ${dataObject.children || '0'}
+*Budget:* ${dataObject.budget}
+*Custom requests:* ${dataObject.message || 'None'}`;
+                
                 // Hide steps & indicators, display Success layout
                 leadForm.innerHTML = `
-                    <div class="form-success-message">
-                        <div class="success-icon-wrap">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <div class="form-success-message" style="text-align: center;">
+                        <div class="success-icon-wrap" style="margin: 0 auto 20px auto;">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
                         <h3>Thank You, ${dataObject.fullname.split(' ')[0]}!</h3>
                         <p>Your custom tour inquiry has been received. Our local travel expert will contact you within the next 2-4 business hours with custom quote options.</p>
-                        <button class="btn btn-primary" style="margin-top: 25px;" onclick="window.location.href='index.html'">Return Home</button>
+                        
+                        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px; flex-wrap: wrap;">
+                            <a href="https://api.whatsapp.com/send?phone=919654502501&text=${encodeURIComponent(mainFormWaText)}" target="_blank" class="btn" style="background-color: #25D366; color: white; border: none; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.473 1.336 4.985l-1.42 5.185 5.305-1.393c1.461.796 3.102 1.213 4.767 1.213h.004c5.502 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm6.273 14.184c-.258.729-1.503 1.341-2.074 1.433-.518.083-1.196.155-3.327-.728-2.73-1.13-4.475-3.896-4.611-4.077-.136-.182-1.109-1.474-1.109-2.812 0-1.338.701-1.996.949-2.26.248-.264.542-.33.723-.33.181 0 .362.001.52.01.164.009.385-.062.602.46.223.538.765 1.861.831 1.996.066.136.11.294.02.476-.09.182-.136.294-.27.452-.136.157-.285.352-.408.472-.136.13-.277.271-.12.54.156.27.697 1.144 1.493 1.854.616.549 1.139.88 1.468 1.042.33.161.517.135.711-.087.194-.222.831-.965 1.053-1.298.223-.333.444-.277.747-.164.303.111 1.922.906 2.253 1.072.33.165.55.244.612.35.062.106.062.616-.196 1.345z"/>
+                                </svg>
+                                <span>Send via WhatsApp</span>
+                            </a>
+                            <button class="btn btn-primary" onclick="window.location.href='index.html'">Return Home</button>
+                        </div>
                     </div>
                 `;
                 if (progressHeader) progressHeader.style.display = 'none';
@@ -453,4 +438,164 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ==========================================
+    // 8. FLOATING WHATSAPP INQUIRY WIDGET
+    // ==========================================
+    const injectWhatsAppWidget = () => {
+        const container = document.createElement('div');
+        container.className = 'whatsapp-widget-container';
+        container.innerHTML = `
+            <!-- Floating Button -->
+            <button class="whatsapp-floating-btn" id="waFloatingBtn" aria-label="Chat on WhatsApp">
+                <svg viewBox="0 0 24 24" width="30" height="30">
+                    <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.473 1.336 4.985l-1.42 5.185 5.305-1.393c1.461.796 3.102 1.213 4.767 1.213h.004c5.502 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm6.273 14.184c-.258.729-1.503 1.341-2.074 1.433-.518.083-1.196.155-3.327-.728-2.73-1.13-4.475-3.896-4.611-4.077-.136-.182-1.109-1.474-1.109-2.812 0-1.338.701-1.996.949-2.26.248-.264.542-.33.723-.33.181 0 .362.001.52.01.164.009.385-.062.602.46.223.538.765 1.861.831 1.996.066.136.11.294.02.476-.09.182-.136.294-.27.452-.136.157-.285.352-.408.472-.136.13-.277.271-.12.54.156.27.697 1.144 1.493 1.854.616.549 1.139.88 1.468 1.042.33.161.517.135.711-.087.194-.222.831-.965 1.053-1.298.223-.333.444-.277.747-.164.303.111 1.922.906 2.253 1.072.33.165.55.244.612.35.062.106.062.616-.196 1.345z"/>
+                </svg>
+                <span class="whatsapp-pulse"></span>
+            </button>
+            
+            <!-- Popup Form Card -->
+            <div class="whatsapp-popup-card" id="waPopupCard">
+                <div class="wa-popup-header">
+                    <div class="wa-agent-info">
+                        <div class="wa-avatar">
+                            <img src="images/logo.png" alt="SMILE HOLIDAY MAKERS Logo">
+                            <span class="wa-status-dot"></span>
+                        </div>
+                        <div>
+                            <h5>SMILE HOLIDAY MAKERS</h5>
+                            <p>Stress Less, Travel More.</p>
+                        </div>
+                    </div>
+                    <button class="wa-popup-close" id="waPopupClose" aria-label="Close chat">&times;</button>
+                </div>
+                <div class="wa-popup-body">
+                    <p class="wa-welcome-msg">Hi there! Fill out this quick form to send a custom trip enquiry directly to our WhatsApp support.</p>
+                    <form id="waInquiryForm" novalidate>
+                        <div class="wa-form-group">
+                            <label for="waName" class="wa-label">Your Name *</label>
+                            <input type="text" id="waName" placeholder="e.g. Amit Sharma" class="wa-input" required>
+                        </div>
+                        <div class="wa-form-group">
+                            <label for="waPhone" class="wa-label">Phone Number *</label>
+                            <input type="tel" id="waPhone" placeholder="10-digit mobile" class="wa-input" required>
+                        </div>
+                        <div class="wa-form-group">
+                            <label for="waDestination" class="wa-label">Destination Interest *</label>
+                            <select id="waDestination" class="wa-select" required>
+                                <option value="">-- Select Destination --</option>
+                                <option value="Shimla (2N/3D)">Shimla Escapes (2N/3D)</option>
+                                <option value="Manali (4N/5D)">Manali Specials (4N/5D)</option>
+                                <option value="Manali (5N/6D)">Manali Specials (5N/6D)</option>
+                                <option value="Combined (5N/6D)">Combined Shimla-Manali Loop (5N/6D)</option>
+                            </select>
+                        </div>
+                        <div class="wa-form-group">
+                            <label for="waDate" class="wa-label">Estimated Date *</label>
+                            <input type="date" id="waDate" class="wa-input" required>
+                        </div>
+                        <button type="submit" class="wa-submit-btn">
+                            <span>Send via WhatsApp</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.473 1.336 4.985l-1.42 5.185 5.305-1.393c1.461.796 3.102 1.213 4.767 1.213h.004c5.502 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm6.273 14.184c-.258.729-1.503 1.341-2.074 1.433-.518.083-1.196.155-3.327-.728-2.73-1.13-4.475-3.896-4.611-4.077-.136-.182-1.109-1.474-1.109-2.812 0-1.338.701-1.996.949-2.26.248-.264.542-.33.723-.33.181 0 .362.001.52.01.164.009.385-.062.602.46.223.538.765 1.861.831 1.996.066.136.11.294.02.476-.09.182-.136.294-.27.452-.136.157-.285.352-.408.472-.136.13-.277.271-.12.54.156.27.697 1.144 1.493 1.854.616.549 1.139.88 1.468 1.042.33.161.517.135.711-.087.194-.222.831-.965 1.053-1.298.223-.333.444-.277.747-.164.303.111 1.922.906 2.253 1.072.33.165.55.244.612.35.062.106.062.616-.196 1.345z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(container);
+
+        // DOM elements
+        const waFloatingBtn = document.getElementById('waFloatingBtn');
+        const waPopupCard = document.getElementById('waPopupCard');
+        const waPopupClose = document.getElementById('waPopupClose');
+        const waInquiryForm = document.getElementById('waInquiryForm');
+
+        waFloatingBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            waPopupCard.classList.toggle('active');
+        });
+
+        waPopupClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            waPopupCard.classList.remove('active');
+        });
+
+        // Close on clicking outside
+        document.addEventListener('click', (e) => {
+            if (waPopupCard.classList.contains('active') && !waPopupCard.contains(e.target) && e.target !== waFloatingBtn) {
+                waPopupCard.classList.remove('active');
+            }
+        });
+
+        // Form Submit Handler
+        waInquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('waName');
+            const phoneInput = document.getElementById('waPhone');
+            const destSelect = document.getElementById('waDestination');
+            const dateInput = document.getElementById('waDate');
+
+            // Clear errors
+            waInquiryForm.querySelectorAll('.wa-error-msg').forEach(el => el.remove());
+            [nameInput, phoneInput, destSelect, dateInput].forEach(el => el.style.borderColor = '');
+
+            let isValid = true;
+
+            const showError = (input, msg) => {
+                isValid = false;
+                input.style.borderColor = '#E53E3E';
+                const err = document.createElement('span');
+                err.className = 'wa-error-msg';
+                err.textContent = msg;
+                input.parentNode.appendChild(err);
+            };
+
+            if (!nameInput.value.trim()) {
+                showError(nameInput, 'Please enter your name.');
+            }
+
+            const telVal = phoneInput.value.replace(/\s+/g, '');
+            const telRegex = /^[6-9]\d{9}$/;
+            if (!telVal) {
+                showError(phoneInput, 'Please enter your phone number.');
+            } else if (!telRegex.test(telVal)) {
+                showError(phoneInput, 'Enter a valid 10-digit mobile.');
+            }
+
+            if (!destSelect.value) {
+                showError(destSelect, 'Please select a destination.');
+            }
+
+            if (!dateInput.value) {
+                showError(dateInput, 'Please select a travel date.');
+            }
+
+            if (isValid) {
+                // Construct message
+                const formattedMsg = `🏔️ *SMILE HOLIDAY MAKERS* 🏔️
+*Stress Less, Travel More.*
+-----------------------------------
+*New WhatsApp Inquiry:*
+*Name:* ${nameInput.value.trim()}
+*Phone:* ${phoneInput.value.trim()}
+*Destination:* ${destSelect.value}
+*Travel Date:* ${dateInput.value}
+-----------------------------------
+_Verified Lead via Website Widget_`;
+
+                const encodedText = encodeURIComponent(formattedMsg);
+                const waLink = `https://api.whatsapp.com/send?phone=919654502501&text=${encodedText}`;
+
+                waPopupCard.classList.remove('active');
+                waInquiryForm.reset();
+                window.open(waLink, '_blank');
+            }
+        });
+    };
+
+    // Inject widget into DOM
+    injectWhatsAppWidget();
 });
