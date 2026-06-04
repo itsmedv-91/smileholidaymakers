@@ -202,9 +202,7 @@ img {
 }
 
 .header-nav.scrolled {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--white);
     height: 70px;
     box-shadow: var(--shadow-md);
 }
@@ -223,13 +221,13 @@ img {
 }
 
 .logo-img {
-    height: 48px;
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
 
 .logo-text {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--primary);
     letter-spacing: -0.5px;
@@ -242,12 +240,12 @@ img {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 18px;
 }
 
 .nav-link {
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.88rem;
     color: var(--primary);
     position: relative;
     padding: 8px 0;
@@ -1535,6 +1533,10 @@ img {
    RESPONSIVE MEDIA QUERIES
    ========================================== */
 @media (max-width: 1024px) {
+    :root {
+        --header-height: 70px;
+    }
+
     .value-grid, .destination-grid, .package-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
@@ -1549,33 +1551,7 @@ img {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-}
 
-@media (max-width: 768px) {
-    :root {
-        --header-height: 70px;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-inner-page .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .section {
-        padding: 50px 0;
-    }
-    
-    .section-title {
-        font-size: 1.85rem;
-    }
-    
     .mobile-toggle {
         display: flex;
     }
@@ -1612,6 +1588,28 @@ img {
     
     .nav-menu .btn {
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-inner-page .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 1.85rem;
     }
     
     .value-grid, .destination-grid, .package-grid {

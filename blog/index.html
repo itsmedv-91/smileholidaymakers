@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore local travel guides, packing checklists, itineraries, and expert logistics advice for Shimla and Manali from SMILE HOLIDAY MAKERS.">
+    <title>Himachal Travel Guides & Blog Hub | SMILE HOLIDAY MAKERS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1E3547',
+                            light: '#2C485E',
+                        },
+                        secondary: {
+                            DEFAULT: '#2C7A7B',
+                            light: '#319795',
+                        },
+                        accent: {
+                            DEFAULT: '#E28743',
+                            hover: '#D07633',
+                        },
+                        'bg-light': '#F7FAFC',
+                        'text-dark': '#2D3748',
+                        'text-muted': '#718096',
+                        'border-color': '#E2E8F0',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .header-nav { background: #ffffff !important; }
+        .logo-text { color: #1E3547 !important; }
+    </style>
+</head>
+<body class="bg-bg-light text-text-dark font-sans leading-relaxed">
+
+    <!-- GLOBAL HEADER & NAVIGATION -->
+    <header class="header-nav" id="headerNav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo-link" id="logoLink">
+                <img src="../images/logo.png" alt="SMILE HOLIDAY MAKERS Logo" class="logo-img">
+                <span class="logo-text">SMILE<span> HOLIDAY MAKERS</span></span>
+            </a>
+            
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../manali.html" class="nav-link">Manali Packages</a>
+                <a href="../shimla.html" class="nav-link">Shimla Packages</a>
+                <a href="../combined.html" class="nav-link">Combined Tours</a>
+                <a href="index.html" class="nav-link">Guides</a>
+                <a href="../about.html" class="nav-link">About Us</a>
+                <a href="../contact.html" class="btn btn-primary btn-sm">Get a Free Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="bg-primary text-white pt-28 pb-16 text-center px-4">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-white">Himachal Travel Guides & Insights</h1>
+            <p class="text-lg text-slate-300">Expert trip planning advice, custom itineraries, packing lists, and secret mountain excursions. Curated by our local specialists to help you <strong>Stress Less, Travel More</strong>.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-10 border-b border-border-color pb-6">
+            <button onclick="filterCategory('All')" class="category-tab active px-5 py-2 rounded-full font-semibold border border-primary bg-primary text-white transition">All Guides</button>
+            <button onclick="filterCategory('Itineraries')" class="category-tab px-5 py-2 rounded-full font-semibold border border-border-color bg-white hover:border-primary transition">Itineraries</button>
+            <button onclick="filterCategory('Adventure & Culture')" class="category-tab px-5 py-2 rounded-full font-semibold border border-border-color bg-white hover:border-primary transition">Adventure & Culture</button>
+            <button onclick="filterCategory('Travel Logistics')" class="category-tab px-5 py-2 rounded-full font-semibold border border-border-color bg-white hover:border-primary transition">Travel Logistics</button>
+        </div>
+
+        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Itineraries">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Itineraries</span>
+                            <span class="text-xs text-text-muted">8 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="delhi-to-shimla-manali-itinerary.html">The Ultimate Delhi to Shimla Manali Tour Itinerary: 6 Days of Pure Mountain Magic</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Discover the perfect 6-day loop through Shimla and Manali. Learn how overnight Volvos and private cabs turn a logistically complex trip into pure relaxation.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="delhi-to-shimla-manali-itinerary.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Itineraries">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Itineraries</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="shimla-3-day-weekend-getaway.html">How to Plan a 3-Day Weekend Getaway to Shimla from Delhi</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Short on time? See how a 3-day weekend itinerary covers Shimla's heritage walk, Kufri adventure, and the quiet pine valleys of Mashobra and Naldehra.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="shimla-3-day-weekend-getaway.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="shimla-vs-manali-comparison.html">Shimla vs. Manali: Which Himachal Destination is Right for Your Family?</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Colonial heritage or high-altitude adventure? A detailed tabular comparison to help you choose the perfect Himachal destination for your next trip.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="shimla-vs-manali-comparison.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Itineraries">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Itineraries</span>
+                            <span class="text-xs text-text-muted">7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="budget-manali-4-nights-5-days.html">The Complete Guide to Planning a Budget-Friendly Manali 4 Nights 5 Days Tour</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Looking for an affordable mountain holiday? Explore our budget Manali tour, combining overnight Volvos with a 3-star hotel and private car sightseeing.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="budget-manali-4-nights-5-days.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="solang-valley-adventure-guide.html">Solang Valley Adventure Guide: Paragliding, Skiing, and Beyond</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Ready to soar? Learn about the top adventure activities in Solang Valley, detailed seasonal schedules, and tips for paragliding, skiing, and trekking.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="solang-valley-adventure-guide.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="manikaran-sahib-spiritual-journey.html">Spiritual Journey to Manikaran Sahib: Hot Springs, History, and Tips</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Experience the serenity of Manikaran Sahib. Discover the geological marvels of natural hot springs and plan a full-day private car excursion from Manali.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="manikaran-sahib-spiritual-journey.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="exploring-mashobra-tattapani-naldehra.html">Off the Beaten Path: Exploring Mashobra, Naldehra, and Tattapani near Shimla</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Escape the crowds of Mall Road. Discover the quiet forests of Mashobra, the deodar golf course of Naldehra, and the river hot springs of Tattapani.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="exploring-mashobra-tattapani-naldehra.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="jugni-waterfall-trekking-guide.html">Trekking to Jugni Waterfall: A Complete Guide for Beginners in Manali</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">An easy, scenic trek through pine forests to a hidden waterfall in Manali. Read our beginner's guide on trail conditions, shoes, and gear.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="jugni-waterfall-trekking-guide.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Travel Logistics">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Travel Logistics</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="delhi-to-manali-volvo-bus-guide.html">Delhi to Manali Volvo Bus Guide: Timings, Boarding Points, and What to Expect</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Demystify the overnight journey to the mountains. Read our complete guide on Volvo timings, boarding points in Delhi, and drop-off services in Manali.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="delhi-to-manali-volvo-bus-guide.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Travel Logistics">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Travel Logistics</span>
+                            <span class="text-xs text-text-muted">5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="himachal-packing-checklist.html">The Ultimate Packing Checklist for a Himachal Tour (Summer vs. Winter)</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Don't leave essentials behind. Check out our comprehensive packing checklist comparing summer layers with heavy winter outerwear for high altitudes.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="himachal-packing-checklist.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Travel Logistics">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Travel Logistics</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="traveling-to-himachal-with-kids.html">Traveling to Himachal with Kids: 5 Things You Need to Know</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Plan a stress-free family vacation. Discover child-friendly hotels, packing essentials, and read about our zero-fee policy for children under 5.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="traveling-to-himachal-with-kids.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="best-months-for-snowfall-himachal.html">Best Time to Visit Shimla and Manali for Snowfall: A Month-by-Month Guide</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Dreaming of a white Christmas or winter sports? Discover the best months to see snow in Manali and Shimla, and plan your winter vacation.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="best-months-for-snowfall-himachal.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="mall-road-souvenir-shopping-guide.html">What to Buy on Mall Road: A Souvenir Guide to Shimla & Manali</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Walk the vibrant mountain markets. Learn what to buy, from wooden items at Lakkar Bazaar to authentic Himachali shawls and dry fruits.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="mall-road-souvenir-shopping-guide.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Itineraries">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Itineraries</span>
+                            <span class="text-xs text-text-muted">6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="local-manali-24-hour-sightseeing-itinerary.html">10 Places to Visit in Local Manali in a Single Day</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">Maximize your day in Manali. Discover a beautifully structured 1-day loop connecting Hidimba Temple, Vashisht springs, forest trails, and monasteries.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="local-manali-24-hour-sightseeing-itinerary.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden border border-border-color hover:shadow-lg transition flex flex-col" data-category="Adventure & Culture">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-secondary border border-teal-200 rounded-full">Adventure & Culture</span>
+                            <span class="text-xs text-text-muted">7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-serif font-bold text-primary mb-3 hover:text-secondary">
+                            <a href="kullu-valley-exploration-guide.html">Exploring Kullu Valley: Naggar Castle to Roerich Art Gallery</a>
+                        </h2>
+                        <p class="text-sm text-text-muted mb-6 flex-grow">A rich cultural day trip from Manali. Discover the wood architecture of Naggar Castle, art at Roerich Gallery, and adventure points in Kullu.</p>
+                        <div class="flex items-center justify-between border-t border-border-color pt-4 mt-auto">
+                            <span class="text-xs text-text-muted">Updated: June 2026</span>
+                            <a href="kullu-valley-exploration-guide.html" class="text-sm font-semibold text-secondary hover:text-secondary-light flex items-center gap-1">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <!-- TRUST BADGES -->
+    <section class="bg-white py-12 border-t border-border-color">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-lg bg-bg-light border border-border-color shadow-sm">
+                    <span class="text-2xl mb-2 block">&#x1F476;</span>
+                    <h4 class="font-serif font-semibold text-primary text-sm mb-1">Under 5 Free</h4>
+                    <p class="text-xs text-text-muted">No charge for young kids</p>
+                </div>
+                <div class="p-4 rounded-lg bg-bg-light border border-border-color shadow-sm">
+                    <span class="text-2xl mb-2 block">&#x1F3F7;&#xFE0F;</span>
+                    <h4 class="font-serif font-semibold text-primary text-sm mb-1">No Hidden GST</h4>
+                    <p class="text-xs text-text-muted">100% transparent pricing</p>
+                </div>
+                <div class="p-4 rounded-lg bg-bg-light border border-border-color shadow-sm">
+                    <span class="text-2xl mb-2 block">&#x1F3D4;&#xFE0F;</span>
+                    <h4 class="font-serif font-semibold text-primary text-sm mb-1">Customizable</h4>
+                    <p class="text-xs text-text-muted">Adjust any tour itinerary</p>
+                </div>
+                <div class="p-4 rounded-lg bg-bg-light border border-border-color shadow-sm">
+                    <span class="text-2xl mb-2 block">&#x1F697;</span>
+                    <h4 class="font-serif font-semibold text-primary text-sm mb-1">Private Cars</h4>
+                    <p class="text-xs text-text-muted">Inclusive tolls & allowance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="footer py-12 bg-primary text-white border-t border-slate-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="footer-col">
+                <h4 class="font-serif font-bold text-lg mb-4 text-white">SMILE HOLIDAY MAKERS</h4>
+                <p class="text-sm text-slate-300">"Stress Less, Travel More."<br><br>Local Himachal experts designing customized family and adventure packages with transparent policies.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="font-serif font-bold text-lg mb-4 text-white">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-slate-300">
+                    <li><a href="../index.html" class="hover:text-white">Home</a></li>
+                    <li><a href="../manali.html" class="hover:text-white">Manali Packages</a></li>
+                    <li><a href="../shimla.html" class="hover:text-white">Shimla Packages</a></li>
+                    <li><a href="../combined.html" class="hover:text-white">Combined Tours</a></li>
+                    <li><a href="../about.html" class="hover:text-white">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="font-serif font-bold text-lg mb-4 text-white">Contact Info</h4>
+                <ul class="space-y-2 text-sm text-slate-300">
+                    <li>&#x1F4DE; +91 96545 02501</li>
+                    <li>&#x2709;&#xFE0F; smileholidaymakers@gmail.com</li>
+                    <li>&#x1F4CD; Delhi, India</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="font-serif font-bold text-lg mb-4 text-white">Our Promise</h4>
+                <p class="text-xs text-slate-400">All local drives use private cars with parking and tolls covered. Intercity travel uses comfortable overnight AC Volvos.</p>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 mt-8 pt-6 text-center text-xs text-slate-400">
+            &copy; 2026 SMILE HOLIDAY MAKERS. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Filter JS -->
+    <script>
+        function filterCategory(category) {
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => {
+                if (tab.textContent.includes(category) || (category === 'All' && tab.textContent.includes('All'))) {
+                    tab.classList.add('active', 'bg-primary', 'text-white');
+                    tab.classList.remove('bg-white', 'text-text-dark');
+                } else {
+                    tab.classList.remove('active', 'bg-primary', 'text-white');
+                    tab.classList.add('bg-white', 'text-text-dark');
+                }
+            });
+
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach(card => {
+                if (category === 'All' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
